@@ -1,0 +1,165 @@
+.Navbar {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: end;
+  padding-bottom: 15px;
+  z-index: 2222222;
+}
+
+.Navbar a:first-of-type {
+  display: flex;
+  text-decoration: none;
+}
+
+.Navbar a:first-of-type h3 {
+  font-size: 32px;
+  margin-top: -1px;
+  color: #926f34;
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  right: -31px;
+  bottom: 13px;
+  list-style: none;
+}
+
+.menu a {
+  position: relative;
+  margin: 0 17px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 0 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+  transition: 0.3s;
+}
+
+.login_btn:hover::after {
+  transform: scale(0) !important;
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    right: -25px;
+  }
+  .menu a {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .menu {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    top: 90px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    border: 2px solid white;
+    border-top: 0;
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .menu_visible {
+    height: fit-content;
+    opacity: 1;
+    z-index: 22;
+    transition: all 0.3s;
+    pointer-events: unset;
+  }
+
+  .login_btn {
+    border-radius: 0;
+  }
+
+  .menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 3px solid white;
+  }
+
+  .menu a:last-of-type {
+    border-bottom: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .menu a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .menu a:hover::after {
+    transform: scaleX(0);
+    transition: 0;
+  }
+
+  .hambuger_bars_div {
+    position: absolute;
+    width: fit-content;
+    height: 40px;
+    bottom: 9px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .hambuger_bars_div div {
+    width: 35px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    transform: translate(0, 10px) rotate(-45deg);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: translate(0, -10px) rotate(45deg);
+  }
+}
+
+@media (max-width: 340px) {
+  .Navbar a:first-of-type h3 {
+    font-size: 28px;
+    margin-top: 5px;
+  }
+}
