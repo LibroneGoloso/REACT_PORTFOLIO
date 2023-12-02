@@ -11,9 +11,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={styles.Navbar}>
-      <a href="">
-        <h3>MapSpawn</h3>
-      </a>
+      <Link to="/">
+        <h3>ANTEIKU</h3>
+      </Link>
       <ul className={`${styles.menu} ${isMenuVisible && styles.menu_visible}`}>
         <Link to="/">HOME</Link>
         <Link to="/">CHARACTERS</Link>
